@@ -1,0 +1,9 @@
+# Ignore MacOS Related
+.DS_Store
+
+# Ignore JetBrains Related
+.idea
+
+# Ignore private information
+server/cert/certificate.crt
+server/cert/private.key
