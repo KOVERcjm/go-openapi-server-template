@@ -1,18 +1,23 @@
 FROM golang:alpine AS builder
 
-COPY . /
+WORKDIR /
+COPY . .
 
 ENV CGO_ENABLED=0 \
-  GOOS=linux
+    GOOS=linux \
+    GO111MODULE=on
 
-RUN apk --no-cache add git \
-  && go build -a -installsuffix cgo -o /app kovercheng
+RUN go build -p 4 -o cmd/app kovercheng
 
 
 FROM scratch
 
-COPY --from=builder /app /
+COPY --from=builder /cmd .
 
-ENV DB_CONNECTURL="postgres://postgres:12345@host.docker.internal:5432/example"
+ENV SERVER_URL="0.0.0.0:3000" \
+    PGCONNECTURL="postgres://postgres:12345@host.docker.internal:5432/examplePg" \
+    MONGOCONNECTURL="mongodb://mongo:12345@host.docker.internal:27017/" \
+    REDISCONNECTURL="redis://:12345@host.docker.internal:6379/0"
 
+EXPOSE 3000
 ENTRYPOINT ["/app"]

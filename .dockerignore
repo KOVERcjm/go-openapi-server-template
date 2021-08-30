@@ -1,0 +1,17 @@
+# Ignore Git Related
+.git
+.gitignore
+
+# Ignore Docker Related
+.dockerignore
+Dockerfile
+
+# Ignore MacOS Related
+.DS_Store
+
+# Ignore JetBrains Related
+.idea
+
+# Ignore Go Related
+.air.toml
+cmd

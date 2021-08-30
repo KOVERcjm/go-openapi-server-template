@@ -24,7 +24,14 @@ func main() {
 		}})
 
 	app.Use(cors.New(), logger.New(logger.Config{
+		/**
+		 *  Colourful HTTP logger for console use
+		 */
 		Format: "${time} ${magenta}${method}${reset} ${url} ${body} | ${cyan}${status}${reset} | ${error}\n",
+		/**
+		 *  JSON format HTTP logger for log collecting use
+		 */
+		//Format: "{\"time\":\"${time}\",\"method\":\"${method}\",\"url\":\"${url}\",\"body\":\"${body}\",\"response_status\":\"${status}\",\"error\":\"${error}\"}\n",
 	}))
 	handler.Route(app)
 	app.Use(func(c *fiber.Ctx) error {
