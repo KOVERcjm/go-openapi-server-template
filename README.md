@@ -1,9 +1,9 @@
 # Golang OpenAPI Server Template
-A backend API server template based on GoFiber, with DB connection of PostgreSQL, Redis and MongoDB.
+A backend API server template based on Gin, with DB connection of PostgreSQL, Redis and MongoDB.
 
-This server is built using [Golang](https://golang.org/) as programming language and [GoFiber](https://gofiber.io/) as web framework, following OpenAPI 3.0 Specification.
+This server is built using [Golang](https://golang.org/) as programming language and [Gin](https://gin-gonic.com/) as web framework, following OpenAPI 3.0 Specification.
 
-[Gin](https://gin-gonic.com/) version can be found in [this branch](https://github.com/KOVERcjm/go-openapi-server-template/tree/Gin_based).
+[GoFiber](https://gofiber.io/) version can be found in [this branch](https://github.com/KOVERcjm/go-openapi-server-template/tree/GoFiber_based).
 
 # 0 Getting started
 Install dependency and initialize DB via Docker (if not existed):
@@ -79,4 +79,4 @@ docker run -d --name my_app -p 3000:3000 my_app
 
 - [OpenAPI 3.0 Specification](https://swagger.io/specification/)
 - [standard-go-project-layout](https://github.com/golang-standards/project-layout)
-- [gp-fiber](https://github.com/gofiber/fiber)
+- [gp-fiber](https://github.com/gin-gonic/gin)
