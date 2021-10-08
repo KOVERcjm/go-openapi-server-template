@@ -5,5 +5,5 @@
 .idea
 
 # Ignore private information
-server/cert/certificate.crt
-server/cert/private.key
+cert/certificate.crt
+cert/private.key
