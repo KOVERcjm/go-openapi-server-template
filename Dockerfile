@@ -7,7 +7,7 @@ ENV CGO_ENABLED=0 \
     GOOS=linux \
     GO111MODULE=on
 
-RUN go build -p 4 -o cmd/app kovercheng
+RUN go build -p 4 -a -installsuffix cgp -o cmd/app kovercheng
 
 
 FROM scratch
